@@ -17,3 +17,5 @@ for i in personas:
     
     # añadir a la lista personas
     listaDicc.append(diccionario_persona)
+
+print(listaDicc)
