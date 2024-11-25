@@ -1,0 +1,35 @@
+{
+      "tareas": [
+        {
+          "tarea": "Preparar presentación del proyecto",
+          "prioridad": "Alta",
+          "fecha_limite": "2024-12-01",
+          "estado": "Pendiente"
+        },
+        {
+          "tarea": "Revisar informe financiero",
+          "prioridad": "Media",
+          "fecha_limite": "2024-12-05",
+          "estado": "Pendiente"
+        },
+        {
+          "tarea": "Organizar reunión con el equipo",
+          "prioridad": "Alta",
+          "fecha_limite": "2024-11-30",
+          "estado": "Completada"
+        },
+        {
+          "tarea": "Actualizar software del servidor",
+          "prioridad": "Baja",
+          "fecha_limite": "2024-12-15",
+          "estado": "Pendiente"
+        },
+        {
+          "tarea": "Enviar correo de agradecimiento a clientes",
+          "prioridad": "Media",
+          "fecha_limite": "2024-12-02",
+          "estado": "Completada"
+        }
+      ]
+  }
+  

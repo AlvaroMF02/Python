@@ -19,31 +19,58 @@
 
 
 # root = Tk()
+# root.geometry("200x200")
 # root.title("Conversor de Unidades")
+# root.resizable(0, 0)         # Desactivar redimensión de ventana
 
 # # Combobox 
 # comboConv = ttk.Combobox(state="readonly",
 #     values=["Temperatura", "Longitud", "Peso"])
-# comboConv.place(x=50, y=50)
+# comboConv.place(relx=0.5, y=50,anchor=CENTER)
 
-# comboUniOrig = ttk.Combobox(state="readonly",
-#     values=["Temperatura", "Longitud", "Peso"])
-# comboUniOrig.place(x=50, y=50)
+# # si escoge temperatura q salgan los de temperatura mivi
+# # comboConv.place(x=500, y=50)
+# button = ttk.Button(text="Mostrar selección")
+# button.place(x=50, y=100)
 
-# comboUniDest = ttk.Combobox(state="readonly",
-#     values=["Temperatura", "Longitud", "Peso"])
-# comboUniDest.place(x=50, y=50)
+# if comboConv.get() == "Temperatura":
+    
+#     comboUniOrig = ttk.Combobox(state="readonly",
+#         values=["Celsius", "Fahrenheit", "Kelvin"])
+#     comboUniOrig.place(relx=0.5, y=50,anchor=CENTER)
 
+#     comboUniDest = ttk.Combobox(state="readonly",
+#         values=["Celsius", "Fahrenheit", "Kelvin"])
+#     comboUniDest.place(relx=0.5, y=90,anchor=CENTER)
 
-# tipoConv = comboConv.get()
+# elif comboConv.get() == "Longitud":
+#     comboUniOrig = ttk.Combobox(state="readonly",
+#         values=["Metros", "Kilómetros", "Millas", "Pies"])
+#     comboUniOrig.place(relx=0.5, y=50,anchor=CENTER)
 
+#     comboUniDest = ttk.Combobox(state="readonly",
+#         values=["Metros", "Kilómetros", "Millas", "Pies"])
+#     comboUniDest.place(relx=0.5, y=90,anchor=CENTER)
 
+# else:
+#     comboUniOrig = ttk.Combobox(state="readonly",
+#         values=["Kilogramos", "Libras", "Onzas"])
+#     comboUniOrig.place(relx=0.5, y=50,anchor=CENTER)
 
+#     comboUniDest = ttk.Combobox(state="readonly",
+#         values=["Kilogramos", "Libras", "Onzas"])
+#     comboUniDest.place(relx=0.5, y=90,anchor=CENTER)
 
+# # tipoConv = comboConv.get()
 
 
 # comboConv.pack()
 # root.mainloop()
+
+
+
+
+
 
 import tkinter as tk
 from tkinter import ttk, messagebox
