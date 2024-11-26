@@ -4,15 +4,31 @@ import json
 from tkinter import *
 from datetime import datetime
 
-def cargarDatos(tree):
-    with open("c:/Users/alvaro/Documents/python/Tema13/tareas.json",encoding="utf8") as jsonfile:
+def cargarDatos(tree):  # cambia rnombre para que lo lea en clase
+    with open("c:/Users/alvar/Documents/Python/Tema13/tareas.json",encoding="utf8") as jsonfile:
         datos = json.load(jsonfile)
         for i in datos["tareas"]:
             tree.insert("", 'end',text = "id_1", values=(i["tarea"],i["prioridad"],i["fecha_limite"],i["estado"]))
             
 
 def agregar():
-    pass
+    top = tk.Toplevel(root)
+    top.title("Agregar Tarea")
+    tk.Label(top, text="Tarea:").grid(row=0, column=0, padx=10, pady=5)
+    entry_tarea = tk.Entry(top, width=30)
+    entry_tarea.grid(row=0, column=1, padx=10, pady=5)
+    
+    tk.Label(top, text="Prioridad:").grid(row=1, column=0, padx=10, pady=5)
+    prioridad_var = tk.StringVar(value="Media")
+    tk.Radiobutton(top, text="Alta", variable=prioridad_var, value="Alta").grid(row=1, column=1, sticky="w")
+    tk.Radiobutton(top, text="Media", variable=prioridad_var, value="Media").grid(row=2, column=1, sticky="w")
+    tk.Radiobutton(top, text="Baja", variable=prioridad_var, value="Baja").grid(row=3, column=1, sticky="w")
+    
+    tk.Label(top, text="Fecha límite:").grid(row=4, column=0, padx=10, pady=5)
+    # date_entry = DateEntry(top, width=27, date_pattern="dd/mm/yyyy")
+    date_entry.grid(row=4, column=1, padx=10, pady=5)
+    
+    tk.Button(top, text="Guardar", command=guardar_tarea).grid(row=5, column=0, columnspan=2, pady=10)
 
 
 
