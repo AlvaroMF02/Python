@@ -10,7 +10,7 @@ def crear_bd():
 def agregar_categoria(nomCateg):
     # insertar categoria
     try:
-        cursor.execute("INSERT INTO categoria VALUES (null, '"+nomCateg+"')")
+        cursor.execute("INSERT INTO categoria VALUES (null,'"+nomCateg+"')")
         conexion.commit()
         print(" # Insertado con exito # ")
     except:
@@ -20,7 +20,7 @@ def agregar_categoria(nomCateg):
 def agregar_plato(seleCateg,nomPlato):
     # insertar plato 
     try:
-        cursor.execute("INSERT INTO plato VALUES (null, '"+nomPlato+"',"+str(seleCateg)+")",)
+        cursor.execute("INSERT INTO plato VALUES (null,'"+nomPlato+"',"+str(seleCateg)+")",)
         conexion.commit()
         print(" # Insertado con exito # ")
     except:
@@ -28,18 +28,17 @@ def agregar_plato(seleCateg,nomPlato):
 
 def mostrar_menu():
     # mostrar de forma ordenada el menu
-    cursor.execute("SELECT * FROM plato LEFT JOIN categoria ON plato.id = categoria.id")
+    cursor.execute("SELECT categoria.nombre, plato.nombre FROM plato LEFT JOIN categoria ON plato.categoria_id = categoria.id")
     menu = cursor.fetchall()
-    for i in menu:
-        print(i)
-    for _,plat,_,_,categ in menu:
+    for categ,plat in menu:
         print("\t- {} : {}".format(categ,plat))
+        
+def mostrar_menu_grafico():
+    pass
+
+
+
             
-
-
-
-
-
 
 
 
@@ -50,12 +49,16 @@ cursor = conexion.cursor()
 # Crea la bd
 crear_bd()
 
+# cursor.execute("DELETE * FROM plato WHERE id = ",)
+# conexion.commit()
+
 # Menu
 while True:
     print("\n\n###############################")
     print("1) Insertar una categoria")
     print("2) Insertar un plato")
     print("3) Ver menú")
+    print("4) Ver graficamente")
     print("0) Salir")
     print("###############################\n\n")
     selec = input("Escoja una opción: ")
@@ -85,6 +88,9 @@ while True:
         
     elif selec == "3":
         mostrar_menu()
+        
+    elif selec == "4":
+        mostrar_menu_grafico()
     
     elif selec == "0":
         break
