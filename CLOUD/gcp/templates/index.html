@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Emociones Faciales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Análisis de Emociones Faciales</h1>
+            <p class="subtitle">Utilizando Google Cloud Vision AI</p>
+        </header>
+
+        <div class="upload-section">
+            <form id="uploadForm">
+                <div class="file-input-container">
+                    <label for="imageInput" class="file-label">
+                        Seleccionar imagen
+                        <input type="file" id="imageInput" accept="image/*" class="file-input">
+                    </label>
+                    <span id="fileName" class="file-name">Ningún archivo seleccionado</span>
+                </div>
+                <button type="submit" class="analyze-button">
+                    <span class="button-text">Analizar Imagen</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="analysis-container">
+            <div class="preview-section">
+                <h3>Imagen a analizar:</h3>
+                <div class="image-preview-container">
+                    <img id="preview" alt="Vista previa de la imagen" style="display: none;">
+                </div>
+            </div>
+
+            <div id="loading" class="loading-container" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analizando imagen...</p>
+            </div>
+
+            <div class="results-section">
+                <div id="results"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <p>Desarrollado con Google Cloud Vision AI</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
